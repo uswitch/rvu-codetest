@@ -113,6 +113,7 @@ Execute the scenarios
 
 ```
 cd {coding-test-dir}/ruby
+bundle
 cucumber
 
 ```
@@ -131,6 +132,7 @@ Execute the scenarios
 
 ```
 cd {coding-test-dir}/js
+npm install
 npm test
 
 ```
