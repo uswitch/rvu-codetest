@@ -49,9 +49,7 @@ Note that:
 
 ### Feature Scenarios
 
-We have outlined the intended behaviour for both pricing plans according to energy usage and calculating how much energy is consumed based on monthly spend. These can be found in the features directory.
-
-// TODO link to articles.
+We have outlined the intended behaviour for both pricing plans according to energy usage and calculating how much energy is consumed based on monthly spend. 
 
 ```
 Feature: Price plans based on usage
@@ -100,8 +98,6 @@ Feature: Calculate annual usage in kWh from a monthly spend
         And monthly spend is 120 pounds
         Then annual usage is 14954 kWh
 ```
-
-
 
 ## Running the automated scenarios
 
