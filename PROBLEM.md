@@ -1,4 +1,4 @@
-# nuSwitch Energy Comparison
+# Uswitch Energy Comparison
 
 Choosing an energy supplier is a difficult job. There are many suppliers with
 different plans and prices that vary by how much energy a customer consumes.
