@@ -1,4 +1,4 @@
-# nuSwitch Energy Comparison
+# Uswitch Energy Comparison
 
 Choosing an energy supplier is a difficult job. There are many suppliers with
 different plans and prices that vary by how much energy a customer consumes.
@@ -49,9 +49,7 @@ Note that:
 
 ### Feature Scenarios
 
-We have outlined the intended behaviour for both pricing plans according to energy usage and calculating how much energy is consumed based on monthly spend. These can be found in the features directory.
-
-// TODO link to articles.
+We have outlined the intended behaviour for both pricing plans according to energy usage and calculating how much energy is consumed based on monthly spend. 
 
 ```
 Feature: Price plans based on usage
@@ -101,8 +99,6 @@ Feature: Calculate annual usage in kWh from a monthly spend
         Then annual usage is 14954 kWh
 ```
 
-
-
 ## Running the automated scenarios
 
 You can verify that your solution provides the correct behaviour by executing the automated scenarios 
@@ -117,6 +113,7 @@ Execute the scenarios
 
 ```
 cd {coding-test-dir}/ruby
+bundle
 cucumber
 
 ```
@@ -135,6 +132,7 @@ Execute the scenarios
 
 ```
 cd {coding-test-dir}/js
+npm install
 npm test
 
 ```

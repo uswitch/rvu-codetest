@@ -1,0 +1,17 @@
+{
+  "name": "uswitch-code-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cucumber": "^6.0.5",
+    "jest": "^24.9.0"
+  },
+  "dependencies": {}
+}
