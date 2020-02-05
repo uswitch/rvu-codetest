@@ -5,7 +5,7 @@ var EnergyMarket = require('../../lib/energy_market');
 var fs = require('fs');
 
 var loadPlans = function(filepath) {
-    var file = fs.readFileSync("../plans.json", "utf8");
+    var file = fs.readFileSync(filepath, "utf8");
     return JSON.parse(file);
 }
 
