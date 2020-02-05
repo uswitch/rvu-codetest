@@ -3,8 +3,7 @@
         "discounts": [
             {
                 "applies_to": "whole_bill",
-                "value": 500,
-                "value_type": "price"
+                "amount_in_pence": 500
             }
         ],
         "supplier": "eon",

@@ -37,6 +37,10 @@ end
 When("monthly spend is {int} pounds") do |int|
     @monthly_spend = int
 end
+
+When("monthly spend is {float} pounds") do |float|
+    @monthly_spend = float
+end
   
 Then("annual usage is {int} kWh") do |int|
     usage = @market.usage(@supplier_name, @plan_type, @monthly_spend)
