@@ -23,7 +23,7 @@ A discount looks as follows:
 ```
 
 
-+ `applies_to` refers to the type of discount being described. It can take the following values: `whole_bill`, `standing_charge`, or `tier_1_rates`. 
++ `applies_to` refers to the type of discount being described. It can take the following values: `whole_bill`.
     + `whole_bill` discounts are lump monetary amounts in pence taken off the bill.
     
 + `value` refers to the amount either in pence or as a percentage that the specified aspect of the plan should be discounted by.

@@ -23,8 +23,8 @@
         "discounts": [
             {
                 "applies_to": "whole_bill",
-                "value": 10,
-                "value_type": "percentage"
+                "value": 1000,
+                "value_type": "price"
             }
         ],
         "supplier": "ovo",
@@ -40,6 +40,13 @@
         ]
     },
     {
+        "discounts": [
+            {
+                "applies_to": "whole_bill",
+                "value": 10,
+                "value_type": "percentage"
+            }
+        ],
         "supplier": "edf",
         "plan": "fixed",
         "rates": [
@@ -57,6 +64,13 @@
         ]
     },
     {
+        "discounts": [
+            {
+                "applies_to": "whole_bill",
+                "value": 5,
+                "value_type": "percentage"
+            }
+        ],
         "supplier": "bg",
         "plan": "standing-charge",
         "rates": [
