@@ -22,8 +22,7 @@
         "discounts": [
             {
                 "applies_to": "whole_bill",
-                "value": 1000,
-                "value_type": "price"
+                "amount_in_pence": 1000
             }
         ],
         "supplier": "ovo",
@@ -42,8 +41,7 @@
         "discounts": [
             {
                 "applies_to": "whole_bill",
-                "value": 10,
-                "value_type": "percentage"
+                "amount_in_pence": 1000
             }
         ],
         "supplier": "edf",
@@ -66,8 +64,7 @@
         "discounts": [
             {
                 "applies_to": "whole_bill",
-                "value": 5,
-                "value_type": "percentage"
+                "amount_in_pence": 5
             }
         ],
         "supplier": "bg",
