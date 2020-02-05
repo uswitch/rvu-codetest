@@ -2,9 +2,11 @@
 
 So far you have priced a collection of plans given a kWh consumption, and also calculated usage given a customer's annual spend.
 
-In this extension exercise, we will be adding some additional features to the data to make it a little more realistic.
+In this extension exercise, we will be working with discounts.
 
 # New Data
+
+http://bit.do/rvu-extension-data
 
 The new plans dataset contains an additional attribute; `discounts`.
 
