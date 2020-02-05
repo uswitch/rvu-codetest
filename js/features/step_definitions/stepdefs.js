@@ -4,13 +4,17 @@ const { Given, When, Then } = require('cucumber');
 var EnergyMarket = require('../../lib/energy_market');
 var fs = require('fs');
 
-var loadPlans = function() {
+var loadPlans = function(filepath) {
     var file = fs.readFileSync("../plans.json", "utf8");
     return JSON.parse(file);
 }
 
 Given('the plans provided', function () {
-    this.market = new EnergyMarket(loadPlans());
+    this.market = new EnergyMarket(loadPlans("../plans.json"));
+});
+
+Given('plans with discounts', function () {
+    this.market = new EnergyMarket(loadPlans("../plans-with-discounts.json"));
 });
 
 When('annual usage is {int} kwh', function (usage) {    
