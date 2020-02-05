@@ -1,4 +1,4 @@
-@dev
+@wip
 Feature: Price plans that have a discount based on usage 
     Energy switchers want to see the cheapest energy tarrifs based on their usage
 
