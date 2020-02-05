@@ -9,7 +9,7 @@ Given("the plans provided") do
     @market = EnergyMarket.new(load_plans("../plans.json"))
 end
 
-Given("the plans with discounts provided") do
+Given("plans with discounts") do
     @market = EnergyMarket.new("../plans-with-discounts.json")
 end
 
