@@ -24,7 +24,6 @@ A discount looks as follows:
 }
 ```
 
-
 + `applies_to` refers to the type of discount being described. It can take the following values: `whole_bill`.
     + `whole_bill` discounts are lump monetary amounts in pence taken off the bill.
     
@@ -37,7 +36,7 @@ Your task is to change your program to apply the discounts listed in the new pla
 
 + All discounts should be removed before VAT is applied
 + Discounts should be applied both when calculating a price from a consumption amount and when calculating a consumption amount from a price
-+ We don't expect you to implement all types of discounts. Discounts are listed above in order of difficulty
+
 
 # Features
 
