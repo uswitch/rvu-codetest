@@ -1,8 +1,8 @@
-Feature: Price plans based on usage
+Feature: Price plans that have a discount based on usage 
     Energy switchers want to see the cheapest energy tarrifs based on their usage
 
     Scenario: Find the cheapest energy plans when usage low
-        Given the plans provided
+        Given the plans with discounts provided
         When annual usage is 1000 kwh
         Then the cheapest plans are
         | provider | plan type          | price  |
@@ -12,7 +12,7 @@ Feature: Price plans based on usage
         | bg       | standing-charge    | 121.33 |
 
     Scenario: Find the cheapest energy plans when usage high
-        Given the plans provided
+        Given the plans with discounts provided
         When annual usage is 2000 kwh
         Then the cheapest plans are
         | provider | plan type          | price  |
@@ -20,3 +20,4 @@ Feature: Price plans based on usage
         | eon      | variable           | 213.68 |
         | bg       | standing-charge    | 215.83 |
         | ovo      | standard           | 235.73 |
+

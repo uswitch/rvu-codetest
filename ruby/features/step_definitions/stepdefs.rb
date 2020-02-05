@@ -1,12 +1,16 @@
 require File.expand_path("lib/energy_market")
 
-def load_plans()
-    file = File.open(File.expand_path("../plans.json"))
+def load_plans(filepath)
+    file = File.open(File.expand_path(filepath))
     data = JSON.load(file.read)
 end
 
 Given("the plans provided") do
-    @market = EnergyMarket.new(load_plans)
+    @market = EnergyMarket.new(load_plans("../plans.json"))
+end
+
+Given("the plans with discounts provided") do
+    @market = EnergyMarket.new("../plans-with-discounts.json")
 end
 
 When("annual usage is {int} kwh") do |usage|
