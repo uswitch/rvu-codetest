@@ -10,12 +10,12 @@ Feature: Calculate annual usage in kWh from a monthly spend when discounts apply
         Given plans with discounts
         When supplier name is "edf"
         And plan type is "fixed"
-        And monthly spend is 99.57 pounds
+        And monthly spend is 100.75 pounds
         Then annual usage is 1000 kWh
 
      Scenario: Standing Charge
         Given plans with discounts
         When supplier name is "bg"
         And plan type is "standing-charge"
-        And monthly spend is 114.96 pounds
+        And monthly spend is 116.08 pounds
         Then annual usage is 1000 kWh
