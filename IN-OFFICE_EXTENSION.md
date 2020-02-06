@@ -12,7 +12,7 @@ The new plans dataset contains an additional attribute; `discounts`.
 
 # Types of discount
 
-A plan can have any combination of three types of discounts, or it can have no discounts at all.
+A plan can have a discount applied to the whole bill.
 
 A discount looks as follows:
 
