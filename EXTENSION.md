@@ -99,7 +99,8 @@ cucumber
 You can run an individual scenario using tags
 
 ```
-cucumber --tags @wip
+cucumber --tags @price
+cucumber --tags @usage
 ```
 
 ## JS
@@ -112,6 +113,6 @@ npm test
 ```
 
 ```
-{coding-test-dir}/js/node_modules/cucumber/bin/cucumber-js --tags @wip
+{coding-test-dir}/js/node_modules/cucumber/bin/cucumber-js --tags @price
 
 ```
