@@ -1,104 +1,64 @@
 # Uswitch Extension Exercise
 
-So far you have priced a collection of plans given a kWh consumption, and also calculated usage given a customer's annual spend.
+So far, you have priced a collection of plans given a kWh consumption,
+and also calculated usage given a customer's annual spend.
 
-In this extension exercise, we will be working with discounts.
+In this extension exercise, we will be adding a new feature to the
+program that will apply discounts to your calculation.
 
 # New Data
 
-http://bit.do/rvu-extension-plan-data
+We have provided a new set of `plans`, `inputs` and `expected_output`.
 
-The new plans dataset contains an additional attribute; `discounts`.
+This new data contains the additional attribute; `discounts`.
+
+You should download these files from
+
+http://bit.do/rvu-extension-plan-data
 
 # Types of discount
 
-A plan can have a discount applied to the whole bill.
+A plan can now include a discount, or it can have no discount at all.
 
-A discount looks as follows:
+Discounts are applied to the whole bill, and looks like the following:
 
 ```json
-{
-    "applies_to": "whole_bill",
-    "amount_in_pence": 500
-}
+[
+    {
+        "applies_to": "whole_bill",
+        "amount_in_pence": 500
+    }
+]
 ```
 
-+ `applies_to` refers to the type of discount being described. It can take the following values: `whole_bill`.
-    + `whole_bill` discounts are lump monetary amounts in pence taken off the bill.
-    
-+ `value` refers to the amount either in pence or as a percentage that the specified aspect of the plan should be discounted by.
-+ `value_type` refers to the type of discount being applied, either `price` or `percentage`.
++ `applies_to` refers to the type of discount being described.
 
-Your task is to change your program to apply the discounts listed in the new plans collection.
+    In this case, `whole_bill` which are lump monetary amounts taken off the bill, in pence.
+
++ `amount_in_pence` is the integer amount to be discounted from the bill
+
+
+Your task is to update your program to apply the discount, first for the `price`, and then for the `usage` commands.
 
 # Notes
 
-+ All discounts should be removed before VAT is applied
-+ Discounts should be applied both when calculating a price from a consumption amount and when calculating a consumption amount from a price
++ All discounts should be removed **before** VAT is applied
++ Discounts are in an **Array**
++ There can be either, **zero** or **one** discounts in the array
 
+# Testing your changes
 
-# Features
+To help check the output of your program, we have provided some **Feature files**.
 
-## Pricing plans with discounts
+These are natural language descriptions of what your program should do, given certain parameters.
 
-```
-@wip
-Feature: Price plans that have a discount based on usage 
-    Energy switchers want to see the cheapest energy tarrifs based on their usage
+You can download fe
 
-    Scenario: Find the cheapest energy plans when usage low
-        Given plans with discounts
-        When annual usage is 1000 kwh
-        Then the cheapest plans are
-        | provider | plan type          | price  |
-        | edf      | fixed              | 100.75 |
-        | eon      | variable           | 103.43 |
-        | ovo      | standard           | 109.73 |
-        | bg       | standing-charge    | 116.08 |
-
-    Scenario: Find the cheapest energy plans when usage high
-        Given plans with discounts 
-        When annual usage is 2000 kwh
-        Then the cheapest plans are
-        | provider | plan type          | price  |
-        | edf      | fixed              | 195.25 |
-        | eon      | variable           | 208.43 |
-        | bg       | standing-charge    | 210.58 |
-        | ovo      | standard           | 225.23 |
-
-```
-
-### Calculating usage from a Monthly Spend when discounts apply 
-
-```
-Feature: Calculate annual usage in kWh from a monthly spend when discounts apply
-    Scenario: Standard Plan
-        Given plans with discounts 
-        When supplier name is "ovo"
-        And plan type is "standard"
-        And monthly spend is 109.73 pounds
-        Then annual usage is 1000 kWh
-    
-    Scenario: Fixed Plan
-        Given plans with discounts
-        When supplier name is "edf"
-        And plan type is "fixed"
-        And monthly spend is 100.75 pounds
-        Then annual usage is 1000 kWh
-
-     Scenario: Standing Charge
-        Given plans with discounts
-        When supplier name is "bg"
-        And plan type is "standing-charge"
-        And monthly spend is 116.08 pounds
-        Then annual usage is 1000 kWh
-```
-
-# Running the Automated Scenarios 
+# Running the Automated Scenarios
 
 In the interview you may find it useful to run individual features using tags (see example above).
 
-## Ruby 
+## Ruby
 
 ```
 cd {coding-test-dir}/ruby
@@ -113,7 +73,7 @@ You can run an individual scenario using tags
 cucumber --tags @wip
 ```
 
-## JS 
+## JS
 
 ```
 cd {coding-test-dir}/js
