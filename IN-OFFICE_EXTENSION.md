@@ -6,7 +6,7 @@ In this extension exercise, we will be working with discounts.
 
 # New Data
 
-http://bit.do/rvu-extension-data
+http://bit.do/rvu-extension-plan-data
 
 The new plans dataset contains an additional attribute; `discounts`.
 
