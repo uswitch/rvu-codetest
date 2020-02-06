@@ -42,6 +42,7 @@ Your task is to change your program to apply the discounts listed in the new pla
 ## Pricing plans with discounts
 
 ```
+@wip
 Feature: Price plans that have a discount based on usage 
     Energy switchers want to see the cheapest energy tarrifs based on their usage
 
@@ -50,19 +51,19 @@ Feature: Price plans that have a discount based on usage
         When annual usage is 1000 kwh
         Then the cheapest plans are
         | provider | plan type          | price  |
+        | edf      | fixed              | 100.75 |
         | eon      | variable           | 103.43 |
-        | edf      | fixed              | 99.57  |
         | ovo      | standard           | 109.73 |
-        | bg       | standing-charge    | 114.96 |
+        | bg       | standing-charge    | 116.08 |
 
     Scenario: Find the cheapest energy plans when usage high
         Given plans with discounts 
         When annual usage is 2000 kwh
         Then the cheapest plans are
         | provider | plan type          | price  |
-        | edf      | fixed              | 184.15 |
+        | edf      | fixed              | 195.25 |
         | eon      | variable           | 208.43 |
-        | bg       | standing-charge    | 204.50 |
+        | bg       | standing-charge    | 210.58 |
         | ovo      | standard           | 225.23 |
 
 ```
@@ -82,18 +83,20 @@ Feature: Calculate annual usage in kWh from a monthly spend when discounts apply
         Given plans with discounts
         When supplier name is "edf"
         And plan type is "fixed"
-        And monthly spend is 99.57 pounds
+        And monthly spend is 100.75 pounds
         Then annual usage is 1000 kWh
 
      Scenario: Standing Charge
         Given plans with discounts
         When supplier name is "bg"
         And plan type is "standing-charge"
-        And monthly spend is 114.96 pounds
+        And monthly spend is 116.08 pounds
         Then annual usage is 1000 kWh
 ```
 
 # Running the Automated Scenarios 
+
+In the interview you may find it useful to run individual features using tags (see example above).
 
 ## Ruby 
 
@@ -118,8 +121,6 @@ npm install
 npm test
 
 ```
-
-You can run an individual scenario using tags
 
 ```
 {coding-test-dir}/js/node_modules/cucumber/bin/cucumber-js --tags @wip
