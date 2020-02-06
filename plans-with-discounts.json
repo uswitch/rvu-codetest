@@ -64,7 +64,7 @@
         "discounts": [
             {
                 "applies_to": "whole_bill",
-                "amount_in_pence": 5
+                "amount_in_pence": 500
             }
         ],
         "supplier": "bg",
