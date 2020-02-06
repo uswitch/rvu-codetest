@@ -16,6 +16,11 @@ You should download these files from
 
 http://bit.do/rvu-extension-plan-data
 
+http://bit.do/pricing-plans-with-discounts
+
+http://bit.do/usage-calculation-with-discounts
+
+
 # Types of discount
 
 A plan can now include a discount, or it can have no discount at all.
@@ -52,11 +57,9 @@ To help check the output of your program, we have provided some **Feature files*
 
 These are natural language descriptions of what your program should do, given certain parameters.
 
-You can download fe
-
 # Running the Automated Scenarios
 
-In the interview you may find it useful to run individual features using tags (see example above).
+In the interview you may find it useful to run individual features using tags (e.g add @wip to the top of the feature you are working on)
 
 ## Ruby
 
