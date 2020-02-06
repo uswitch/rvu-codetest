@@ -1,51 +1,57 @@
-const assert = require('assert');
-const { Given, When, Then } = require('cucumber');
+const fs = require('fs')
+const assert = require('assert')
 
-var EnergyMarket = require('../../lib/energy_market');
-var fs = require('fs');
+const { Given, When, Then } = require('cucumber')
+const { price, usage } = require('../../lib/energy-market')
 
-var loadPlans = function(filepath) {
-    var file = fs.readFileSync(filepath, "utf8");
-    return JSON.parse(file);
+const loadPlans = function(filepath) {
+  const json = fs.readFileSync(filepath, "utf8");
+  return JSON.parse(json);
 }
 
 Given('the plans provided', function () {
-    this.market = new EnergyMarket(loadPlans("../plans.json"));
-});
+  this.plans = loadPlans('../plans.json')
+})
 
 Given('plans with discounts', function () {
-    this.market = new EnergyMarket(loadPlans("../plans-with-discounts.json"));
-});
+  this.plans = loadPlans('../plans-with-discounts.json')
+})
 
-When('annual usage is {int} kwh', function (usage) {    
-    this.plans = this.market.price(usage);
-});
+/* Price */
+When('annual usage is {int} kwh', function (usage) {
+  this.usage = usage
+})
 
 Then('the cheapest plans are', function (plans) {
-    
-    var plans = plans.hashes();
-    
-    assert.deepEqual(this.plans[0], plans[0]);
-    assert.deepEqual(this.plans[1], plans[1]);
-    assert.deepEqual(this.plans[2], plans[2]);
-    assert.deepEqual(this.plans[3], plans[3]);
-});
+  const actual = price(this.plans, this.usage)
+  const expected = plans.hashes()
 
+  assert.deepStrictEqual(actual[0], expected[0])
+  assert.deepStrictEqual(actual[1], expected[1])
+  assert.deepStrictEqual(actual[2], expected[2])
+  assert.deepStrictEqual(actual[3], expected[3])
+})
+
+/* Usage */
 When('supplier name is {string}', function (supplierName) {
-    this.supplierName = supplierName;
-    
-});
+  this.supplierName = supplierName
+})
 
 When('plan type is {string}', function (planType) {
-    this.planType = planType;
-});
+  this.planType = planType
+})
 
-When('monthly spend is {int} pounds', function (spend) {
-    this.monthlySpend = spend;
-});
+When('monthly spend is {float} pounds', function (spend) {
+  this.monthlySpend = spend
+})
 
-Then('annual usage is {int} kWh', function (usage) {
-    var actualUsage = this.market.usage(this.supplierName, this.planType, this.monthlySpend);
-    
-    assert.equal(actualUsage, usage);
-});
+Then('annual usage is {int} kWh', function (expectedUsage) {
+  const actualUsage = usage(
+    this.plans,
+    this.supplierName,
+    this.planType,
+    this.monthlySpend
+  )
+
+  assert.strictEqual(actualUsage, expectedUsage)
+})
