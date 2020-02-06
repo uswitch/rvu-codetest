@@ -96,6 +96,8 @@ Feature: Calculate annual usage in kWh from a monthly spend when discounts apply
 
 # Running the Automated Scenarios 
 
+In the interview you may find it useful to run individual features using tags (see example above).
+
 ## Ruby 
 
 ```
@@ -119,8 +121,6 @@ npm install
 npm test
 
 ```
-
-You can run an individual scenario using tags
 
 ```
 {coding-test-dir}/js/node_modules/cucumber/bin/cucumber-js --tags @wip
