@@ -20,4 +20,3 @@ Feature: Price plans based on usage
         | eon      | variable           | 213.68 |
         | bg       | standing-charge    | 215.83 |
         | ovo      | standard           | 235.73 |
-

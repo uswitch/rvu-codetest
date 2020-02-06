@@ -1,5 +1,11 @@
 [
     {
+        "discounts": [
+            {
+                "applies_to": "whole_bill",
+                "amount_in_pence": 500
+            }
+        ],
         "supplier": "eon",
         "plan": "variable",
         "rates": [
@@ -13,6 +19,12 @@
         ]
     },
     {
+        "discounts": [
+            {
+                "applies_to": "whole_bill",
+                "amount_in_pence": 1000
+            }
+        ],
         "supplier": "ovo",
         "plan": "standard",
         "rates": [
@@ -26,6 +38,12 @@
         ]
     },
     {
+        "discounts": [
+            {
+                "applies_to": "whole_bill",
+                "amount_in_pence": 1000
+            }
+        ],
         "supplier": "edf",
         "plan": "fixed",
         "rates": [
@@ -43,6 +61,12 @@
         ]
     },
     {
+        "discounts": [
+            {
+                "applies_to": "whole_bill",
+                "amount_in_pence": 500
+            }
+        ],
         "supplier": "bg",
         "plan": "standing-charge",
         "rates": [
