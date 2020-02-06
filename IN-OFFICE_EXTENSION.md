@@ -18,9 +18,8 @@ A discount looks as follows:
 
 ```json
 {
-        "applies_to": "whole_bill",
-        "value": 5043,
-        "value_type": "price"
+    "applies_to": "whole_bill",
+    "amount_in_pence": 500
 }
 ```
 
