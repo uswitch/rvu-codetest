@@ -57,6 +57,32 @@ To help check the output of your program, we have provided some **Feature files*
 
 These are natural language descriptions of what your program should do, given certain parameters.
 
+# Preparing your Automated Scenarios
+
+Save the discounted plans at the root of your project with the name "plans-with-discounts.json".
+
+You will need to have the following step definitions that will allow your program to load in the new discounted plans. These can be found in stepdefs.rb/stepdefs.js
+
+```ruby
+def load_plans(filepath)
+    file = File.open(File.expand_path(filepath))
+    data = JSON.load(file.read)
+end
+
+Given("the plans provided") do
+    @market = EnergyMarket.new(load_plans("../plans.json"))
+end
+
+Given("plans with discounts") do
+    @market = EnergyMarket.new("../plans-with-discounts.json")
+end
+
+When("monthly spend is {float} pounds") do |float|
+    @monthly_spend = float
+end
+
+```
+
 # Running the Automated Scenarios
 
 In the interview you may find it useful to run individual features using tags (e.g add @wip to the top of the feature you are working on)
