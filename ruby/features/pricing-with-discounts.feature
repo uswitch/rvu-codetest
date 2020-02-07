@@ -6,7 +6,7 @@ Feature: Price plans that have a discount based on usage
         Given plans with discounts
         When annual usage is 1000 kwh
         Then the cheapest plans are
-        | provider | plan type          | price  |
+        | supplier | plan name          | price  |
         | edf      | fixed              | 100.75 |
         | eon      | variable           | 103.43 |
         | ovo      | standard           | 109.73 |
@@ -16,7 +16,7 @@ Feature: Price plans that have a discount based on usage
         Given plans with discounts 
         When annual usage is 2000 kwh
         Then the cheapest plans are
-        | provider | plan type          | price  |
+        | supplier | plan name          | price  |
         | edf      | fixed              | 195.25 |
         | eon      | variable           | 208.43 |
         | bg       | standing-charge    | 210.58 |

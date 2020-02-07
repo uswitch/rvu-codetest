@@ -37,8 +37,8 @@ When('supplier name is {string}', function (supplierName) {
   this.supplierName = supplierName
 })
 
-When('plan type is {string}', function (planType) {
-  this.planType = planType
+When('plan name is {string}', function (planName) {
+  this.planName = planName
 })
 
 When('monthly spend is {float} pounds', function (spend) {
@@ -49,7 +49,7 @@ Then('annual usage is {int} kWh', function (expectedUsage) {
   const actualUsage = usage(
     this.plans,
     this.supplierName,
-    this.planType,
+    this.planName,
     this.monthlySpend
   )
 

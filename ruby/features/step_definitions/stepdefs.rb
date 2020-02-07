@@ -30,8 +30,8 @@ When("supplier name is {string}") do |string|
     @supplier_name = string
 end
   
-When("plan type is {string}") do |string|
-    @plan_type = string
+When("plan name is {string}") do |string|
+    @plan_name = string
 end
   
 When("monthly spend is {int} pounds") do |int|
@@ -43,6 +43,6 @@ When("monthly spend is {float} pounds") do |float|
 end
   
 Then("annual usage is {int} kWh") do |int|
-    usage = @market.usage(@supplier_name, @plan_type, @monthly_spend)
+    usage = @market.usage(@supplier_name, @plan_name, @monthly_spend)
     expect(usage).to eq(int)
 end

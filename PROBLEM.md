@@ -93,7 +93,7 @@ Feature: Price plans based on usage
         Given the plans provided
         When annual usage is 1000 kwh
         Then the cheapest plans are
-        | provider | plan type          | price  |
+        | supplier | plan name          | price  |
         | eon      | variable           | 108.68 |
         | edf      | fixed              | 111.25 |
         | ovo      | standard           | 120.23 |
@@ -103,7 +103,7 @@ Feature: Price plans based on usage
         Given the plans provided
         When annual usage is 2000 kwh
         Then the cheapest plans are
-        | provider | plan type          | price  |
+        | supplier | plan name          | price  |
         | edf      | fixed              | 205.75 |
         | eon      | variable           | 213.68 |
         | bg       | standing-charge    | 215.83 |
@@ -114,21 +114,21 @@ Feature: Calculate annual usage in kWh from a monthly spend
     Scenario: Standard Plan
         Given the plans provided
         When supplier name is "ovo"
-        And plan type is "standard"
+        And plan name is "standard"
         And monthly spend is 1000 pounds
         Then annual usage is 103855 kWh
 
     Scenario: Fixed Plan
         Given the plans provided
         When supplier name is "edf"
-        And plan type is "fixed"
+        And plan name is "fixed"
         And monthly spend is 350 pounds
         Then annual usage is 44267 kWh
 
      Scenario: Standing Charge
         Given the plans provided
         When supplier name is "bg"
-        And plan type is "standing-charge"
+        And plan name is "standing-charge"
         And monthly spend is 120 pounds
         Then annual usage is 14954 kWh
 ```

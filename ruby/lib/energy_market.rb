@@ -7,14 +7,14 @@ class EnergyMarket
 
   # Returns an array of plans available in the market for a given consumption.
   #
-  # [{"provider"=>"edf", "plan type"=>"fixed", "price"=>"205.75"},
-  #  {"provider"=>"eon", "plan type"=>"variable", "price"=>"213.68"},
-  #  {"provider"=>"bg", "plan type"=>"standing-charge", "price"=>"215.83"},
-  #  {"provider"=>"ovo", "plan type"=>"standard", "price"=>"235.73"}]
+  # [{"supplier"=>"edf", "plan name"=>"fixed", "price"=>"205.75"},
+  #  {"supplier"=>"eon", "plan name"=>"variable", "price"=>"213.68"},
+  #  {"supplier"=>"bg", "plan name"=>"standing-charge", "price"=>"215.83"},
+  #  {"supplier"=>"ovo", "plan name"=>"standard", "price"=>"235.73"}]
   def price(consumption)
   end
 
-  def usage(supplier_name, plan_type, monthly_spend)
+  def usage(supplier_name, plan_name, monthly_spend)
     10
   end
 end

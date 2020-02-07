@@ -2,7 +2,7 @@ function price (plans, usage) {
   return []
 }
 
-function usage (plans, supplier, planType, monthlySpend) {
+function usage (plans, supplier, planName, monthlySpend) {
   return 100
 }
 
