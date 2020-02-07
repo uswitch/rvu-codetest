@@ -10,7 +10,7 @@ Given("the plans provided") do
 end
 
 Given("plans with discounts") do
-    @market = EnergyMarket.new("../plans-with-discounts.json")
+    @market = EnergyMarket.new(load_plans("../plans-with-discounts.json"))
 end
 
 When("annual usage is {int} kwh") do |usage|
