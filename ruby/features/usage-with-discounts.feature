@@ -1,3 +1,4 @@
+@usage
 Feature: Calculate annual usage in kWh from a monthly spend when discounts apply
     Scenario: Standard Plan
         Given plans with discounts 
