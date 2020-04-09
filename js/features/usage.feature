@@ -4,14 +4,14 @@ Feature: Calculate annual usage in kWh from a monthly spend
         When supplier name is "ovo"
         And plan name is "standard"
         And monthly spend is 1000 pounds
-        Then annual usage is 44267 kWh
+        Then annual usage is 103855 kWh
     
     Scenario: Fixed Plan
         Given the plans provided
         When supplier name is "edf"
         And plan name is "fixed"
         And monthly spend is 350 pounds
-        Then annual usage is 103855 kWh
+        Then annual usage is 44267 kWh
 
      Scenario: Standing Charge
         Given the plans provided
